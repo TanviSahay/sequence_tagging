@@ -65,17 +65,20 @@ class Config():
     dim_char = 100
 
     # glove files
-    filename_glove = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
+    #filename_glove = "data/glove.6B/glove.6B.{}d.txt".format(dim_word)
     # trimmed embeddings (created from glove_filename with build_data.py)
-    filename_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
+    #filename_trimmed = "data/glove.6B.{}d.trimmed.npz".format(dim_word)
+    filename_glove = "/corpus/Glove_Embeddings/model_2/glove_embeddings.txt"
+    filename_trimmed = "/corpus/Glove_Embeddings/model_2/trimmed_glove_embeddings.npz"
+
     use_pretrained = True
 
     # dataset
-    # filename_dev = "data/coNLL/eng/eng.testa.iob"
-    # filename_test = "data/coNLL/eng/eng.testb.iob"
-    # filename_train = "data/coNLL/eng/eng.train.iob"
+    filename_dev = "/corpus/Corpus/NER_dev.iob"
+    filename_test = "/corpus/Corpus/NER_test.iob"
+    filename_train = "/corpus/Corpus/NER_train.iob"
 
-    filename_dev = filename_test = filename_train = "data/test.txt" # test
+    #filename_dev = filename_test = filename_train = "/corpus/Corpus/NER_train_mini.iob" # test
 
     max_iter = None # if not None, max number of examples in Dataset
 
@@ -88,7 +91,7 @@ class Config():
     train_embeddings = False
     nepochs          = 15
     dropout          = 0.5
-    batch_size       = 20
+    batch_size       = 10
     lr_method        = "adam"
     lr               = 0.001
     lr_decay         = 0.9
